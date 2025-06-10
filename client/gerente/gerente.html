@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Gerente - Indústrias Wayne</title>
+    <link rel="stylesheet" href="gerente.css">
+    <style>
+        .oculto {
+            display: none;
+        }
+
+        .nav-btn {
+            margin: 5px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logout-btn {
+            float: right;
+            background-color: darkred;
+        }
+
+        .relatorio {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Painel do Gerente - Indústrias Wayne</h1>
+        <button class="logout-btn">Sair</button>
+    </header>
+
+    <nav>
+        <button class="nav-btn" onclick="mostrarSecao('usuarios')">Usuários</button>
+        <button class="nav-btn" onclick="mostrarSecao('equipes')">Equipes</button>
+        <button class="nav-btn" onclick="mostrarSecao('recursos')">Recursos</button>
+        <button class="nav-btn" onclick="mostrarSecao('relatorios')">Relatórios</button>
+    </nav>
+
+    <main>
+
+      <!-- Seção de Usuários -->
+<section id="usuarios" class="conteudo">
+    <!-- Seção de Funcionários -->
+    <section id="funcionarios">
+        <h2>Funcionários</h2>
+        <table id="tabelaFuncionarios" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Gerentes -->
+    <section id="gerentes">
+        <h2>Gerentes</h2>
+        <table id="tabelaGerentes" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Administradores -->
+    <section id="admins">
+        <h2>Administradores</h2>
+        <table id="tabelaAdmins" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Formulário de Edição -->
+    <div id="formEdicaoUsuario" class="oculto">
+        <h3>Editar Usuário</h3>
+        <form id="editarUsuarioForm">
+            <input type="hidden" id="usuarioId">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+            
+            <button type="submit">Salvar Alterações</button>
+            <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+        </form>
+    </div>
+</section>
+
+        <!-- Seção de Equipes -->
+        <section id="equipes" class="conteudo oculto">
+            <h2>Equipes</h2>
+            <ul id="lista-equipe"></ul>
+        </section>
+
+        <!-- Seção de Recursos -->
+        <section id="recursos" class="conteudo oculto">
+            <h2>Recursos</h2>
+            <ul id="lista-recursos"></ul>
+        </section>
+
+        <!-- Seção de Relatórios -->
+        <section id="relatorios" class="conteudo oculto">
+            <h2>Relatórios</h2>
+            <button onclick="filtrarRelatorios()">Filtrar Relatórios</button>
+            <div id="lista-relatorios"></div>
+        </section>
+    </main>
+
+    <script src="gerente.js"></script>
+</body>
+</html>

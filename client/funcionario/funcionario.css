@@ -1,0 +1,137 @@
+/* ===== Reset e estrutura básica ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+    background-color: #111;
+    color: white;
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid red;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.logout-btn {
+    background: red;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #d43f4f;
+}
+
+/* ===== Navegação ===== */
+nav {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+nav button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+nav button:hover {
+    background-color: #d43f4f;
+}
+
+/* ===== Área principal ===== */
+main {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Seções de conteúdo ===== */
+#conteudo {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#conteudo h2 {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* ===== Listas de equipe e recursos ===== */
+#listaEquipe,
+#listaRecursos,
+#lista-relatorios {
+    margin-top: 15px;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #2a2a2a;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid red;
+}
+
+/* ===== Relatórios ===== */
+.relatorio {
+    background: #222;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-left: 5px solid red;
+}
+
+.relatorio h4 {
+    color: red;
+}
+
+.relatorio small {
+    color: #bbb;
+}
+
+/* ===== Rodapé ===== */
+footer {
+    margin-top: 20px;
+    color: #888;
+    font-size: 14px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Admin | Indústrias Wayne</title>
+  <link rel="stylesheet" href="/funcionario/funcionario.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo, <span id="nome-funcionario">Funcionário</span>!</h1>
+        <button class="logout-btn">Sair</button>
+    </header>
+
+    <nav>
+        <button onclick="mostrarSecao('equipe')">Minha Equipe</button>
+        <button onclick="mostrarSecao('recursos')">Meus Recursos</button>
+        <button onclick="mostrarSecao('relatorios')">Relatórios</button>
+    </nav>
+
+    <main>
+      <div id="conteudo">
+        <div id="listaEquipe"></div> 
+        <div id="listaRecursos"></div> 
+        <div id="lista-relatorios"></div> 
+      </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Sistema de Gestão</p>
+    </footer>
+
+    <script src="funcionario.js"></script>
+</body>
+</html>

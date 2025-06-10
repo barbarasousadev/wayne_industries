@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Admin | Indústrias Wayne</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  
+</head>
+<body>
+  <header class="topbar">
+    <h1>Indústrias Wayne - Painel Administrativo</h1>
+    <button class="logout-btn">Sair</button>
+  </header>
+
+  <aside class="sidebar">
+    <button class="menu-btn" data-secao="usuarios">👤 Usuários</button>
+    <button class="menu-btn" data-secao="recursos">⚙️ Recursos</button>
+    <button class="menu-btn" data-secao="relatorios">📊 Relatórios</button>
+  </aside>
+
+  <main class="main-content">
+    <section class="perfil">
+      <h2>Bem-vindo, <span id="nome-admin">Administrador</span></h2>
+    </section>
+
+    <section id="usuarios" class="conteudo oculto">
+      <h3>Usuários</h3>
+      <button class="crud-btn" onclick="abrirModalUsuario()">+ Adicionar Usuário</button>
+      <ul id="lista-usuarios" class="lista"></ul>
+    </section>
+
+    <section id="recursos" class="conteudo oculto">
+      <h3>Recursos</h3>
+      <button class="crud-btn" onclick="abrirModalRecurso()">+ Adicionar Recurso</button>
+      <ul id="lista-recursos" class="lista"></ul>
+    </section>
+
+<section id="relatorios" class="conteudo oculto">
+  <h3>📊 Relatórios</h3>
+
+    <div class="secao-relatorios">
+      <button class="crud-btn" onclick="alternarFormularioRelatorio()">➕ Adicionar Relatório</button>
+
+      <div id="formularioRelatorio" class="formulario-relatorio oculto">
+      <h3>Novo Relatório</h3>
+      <input type="text" id="tituloRelatorio" placeholder="Título do relatório" required />
+      <textarea id="conteudoRelatorio" placeholder="Descrição do relatório" required></textarea>
+      <input type="text" id="nomeEquipeRelatorio" placeholder="Nome da Equipe" required />
+      <input type="text" id="recursoRelatorio" placeholder="Recurso Utilizado" required />
+      <button onclick="criarRelatorio()">Concluir</button>
+
+
+    </div>
+
+    <div id="lista-relatorios" class="lista-relatorios"></div>
+  </div>
+</section>
+  </main>
+
+  <!-- Modal Usuário -->
+  <div id="modalUsuario" class="modal oculto">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModalUsuario()">&times;</span>
+      <h2 id="tituloModalUsuario">Adicionar Usuário</h2>
+      <form id="formUsuario">
+        <input type="text" id="nomeUsuario" placeholder="Nome" required />
+        <input type="email" id="emailUsuario" placeholder="E-mail" required />
+        <input type="password" id="senhaUsuario" placeholder="Digite a senha">
+        <select id="tipoUsuario" required>
+          <option value="funcionario">Funcionário</option>
+          <option value="gerente">Gerente</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modalRecurso" class="modal oculto">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModalRecurso()">&times;</span>
+      <h2 id="tituloModalRecurso">Adicionar Recurso</h2>
+      <form id="formRecurso">
+        <input type="text" id="nomeRecurso" placeholder="Nome do Recurso" required />
+        <input type="text" id="tipoRecurso" placeholder="Tipo (Ex: Veículo, Equipamento)" required />
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+<script src="dashboard.js"></script>
+</body>
+</html>
